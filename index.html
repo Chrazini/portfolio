@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kxz6lnw.css">
+    <link rel="icon" href="images/favicon.png">
+  </head>
+  <body>
+    <div id="top" class="line"></div>
+    <div id="left" class="line"></div>
+    <div id="right" class="line"></div>
+    <div id="bottom" class="line"></div>
+    <nav><a href="#home">Home</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <main>
+      <section id="home"><img src="images/logo_amdi.png" alt="Amdi Logo" class="logo">
+        <h1>Christian Amdi Jensen</h1>
+        <h5>. Web Developer . UX Designer . Level Designer .</h5>
+      </section>
+      <section id="portfolio" class="hidden">
+        <h1>Portfolio</h1>
+        <div class="wrapper"> 
+          <div class="left">
+            <button onclick="plusDivs(-1)" class="arrow left"></button>
+          </div>
+          <div class="right">
+            <button onclick="plusDivs(+1)" class="arrow right"></button>
+          </div>
+          <div class="content">
+            <article id="graphics" class="portslides">
+              <h5>Graphics</h5>
+              <p>test</p>
+            </article>
+            <article id="random-map-scripts" class="portslides">
+              <h5>Random Map Scripts</h5>
+              <p>Random map scripts are text files that contain a set of instructions and parameters, which are used to generate a map randomly for the video game Age of Empires 2. Below you will find a list of all publically available maps.</p>
+            </article>
+            <article id="web-design" class="portslides">
+              <h5>Web Design</h5>
+              <p>test</p>
+            </article>
+            <article id="assorted" class="portslides">
+              <h5>Assorted</h5>
+              <p>test</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="hidden">
+        <h1>About</h1>
+        <div class="wrapper">
+          <p>My name is Christian, and I'm a multimedia student at CPH Business in Denmark. I'm a down to earth person with a creative soul and a will to create beautiful and functional things for anything that is digital - illustrations, web design, animations, typography and much more.</p>
+        </div>
+      </section>
+      <section id="contact" class="hidden">
+        <h1>Contact</h1>
+        <div class="wrapper">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed convallis est, ullamcorper sodales est. Aenean ultricies sapien feugiat ante pulvinar, id commodo nisi lacinia. Maecenas nec eros nec ipsum pharetra pretium. Curabitur mattis velit non dolor consectetur dictum. Sed justo odio, tempor nec tellus eget, viverra imperdiet justo. Donec pretium tellus eu tortor commodo venenatis. Vivamus ac quam feugiat, interdum lectus vehicula, finibus est. Ut semper sodales metus, vel volutpat lorem euismod nec. Morbi fermentum dapibus turpis a posuere. </p>
+          <form action="#" method="POST">
+            <div class="field">
+              <label for="field-name">Name</label>
+              <input id="field-name" type="text" placeholder="Who are you?">
+            </div>
+            <div class="field">
+              <label for="field-email">Email</label>
+              <input id="field-email" type="email" placeholder="How do I reach you?">
+            </div>
+            <div class="field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" placeholder="What do you want to say to me?"></textarea>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+<!--   footer
+span © Copyright 2019, Christian Amdi Jensen
+
+-->
+<script type="text/javascript" src="javascript/main.js"></script>

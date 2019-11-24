@@ -1,0 +1,451 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Zeitung", sans-serif;
+  font-weight: 200;
+}
+
+h1, .gigantic {
+  font-size: 4.0rem;
+  letter-spacing: -.1rem;
+}
+
+h2, .huge {
+  font-size: 3.6rem;
+  letter-spacing: -.1rem;
+}
+
+h3, .big {
+  font-size: 3.0rem;
+  letter-spacing: -.1rem;
+}
+
+h4, .medium {
+  font-size: 2.4rem;
+  letter-spacing: -.08rem;
+}
+
+h5, .small {
+  font-size: 1.8rem;
+  letter-spacing: -.04rem;
+}
+
+h6, .tiny {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+}
+
+p, span {
+  font-family: "Open Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: #E3664D;
+}
+
+a:hover, a:focus {
+  color: #ea8c79;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media (min-width: 1280px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1280px 1fr;
+    grid-template-rows: 1fr 720px 1fr;
+  }
+  @keyframes left-right {
+    from {
+      transform: translateX(-100vw);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes right-left {
+    from {
+      transform: translateX(100vw);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes top-bottom {
+    from {
+      transform: translateY(-100vw);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes bottom-top {
+    from {
+      transform: translateY(100vw);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes a-menu {
+    0% {
+      transform: translateY(64px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .line {
+    height: 100%;
+    width: 100%;
+  }
+  #top {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    animation-name: left-right;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    border-bottom: 1px solid #1C1C1C;
+  }
+  #left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    animation-name: top-bottom;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    border-right: 1px solid #1C1C1C;
+  }
+  #right {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    animation-name: bottom-top;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    border-left: 1px solid #1C1C1C;
+  }
+  #bottom {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    animation-name: right-left;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    border-top: 1px solid #1C1C1C;
+  }
+}
+
+nav {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+nav a {
+  padding: 16px;
+  font-family: "Zeitung", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #1C1C1C;
+  opacity: 0;
+}
+
+nav a:hover {
+  font-weight: 700;
+}
+
+nav a:nth-child(1) {
+  animation-name: a-menu;
+  animation-duration: 250ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+nav a:nth-child(2) {
+  animation-name: a-menu;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+nav a:nth-child(3) {
+  animation-name: a-menu;
+  animation-duration: 750ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+nav a:nth-child(4) {
+  animation-name: a-menu;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+nav a:nth-child(4) {
+  margin-right: 10px;
+}
+
+main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  color: #F2F0F0;
+  font-size: 18px;
+}
+
+section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 720px;
+  width: 1280px;
+  padding: 64px;
+  background-color: #1C1C1C;
+}
+
+/* ********** HOME SECTION ******************** */
+#home {
+  justify-content: center;
+}
+
+#home img {
+  margin-top: -64px;
+  height: 256px;
+  width: auto;
+}
+
+#home h1 {
+  font-size: 6.0rem;
+}
+
+#home .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ********** PORTFOLIO SECTION ******************** */
+#portfolio .wrapper {
+  display: grid;
+  grid-template-columns: 64px 1fr 64px;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+#portfolio .wrapper .left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#portfolio .wrapper .left .arrow {
+  transform: rotate(-135deg);
+}
+
+#portfolio .wrapper .right {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#portfolio .wrapper .right .arrow {
+  transform: rotate(45deg);
+}
+
+#portfolio .wrapper .right, #portfolio .wrapper .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 512px;
+}
+
+#portfolio .wrapper .arrow {
+  height: 44px;
+  width: 44px;
+  border: 0px #40BD7A solid;
+  border-top: 2px #40BD7A solid;
+  border-right: 2px #40BD7A solid;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  padding: 8px;
+  font-size: 30px;
+  transition: all 10ms;
+}
+
+#portfolio .wrapper .arrow:hover {
+  border-top: 6px #40BD7A solid;
+  border-right: 6px #40BD7A solid;
+  transition: all 100ms;
+}
+
+#portfolio .wrapper .content {
+  margin-top: 16px;
+  border-radius: 8px;
+  background-color: rgba(240, 240, 240, 0.1);
+}
+
+#portfolio .wrapper .content article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* ********** ABOUT SECTION ******************** */
+#about .wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ********** CONTACT SECTION ******************** */
+#contact form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 64px;
+}
+
+#contact form .field {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  height: 64px;
+  width: 768px;
+  margin-bottom: 16px;
+  background-color: whitesmoke;
+  font-family: "Zeitung", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+#contact form .field:hover input {
+  width: 2048px;
+  padding: 16px;
+  opacity: 1;
+}
+
+#contact form .field:hover textarea {
+  width: 2048px;
+  padding: 16px;
+  opacity: 1;
+}
+
+#contact form .field:last-child {
+  height: 128px;
+}
+
+#contact form .field label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 100%;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 200;
+  background-color: #E3664D;
+}
+
+#contact form .field input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 0;
+  border: none;
+  opacity: 0;
+  font-family: zeitung-mono, sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  transition: all 500ms;
+}
+
+#contact form .field input:focus {
+  width: 2048px;
+  padding: 16px;
+  opacity: 1;
+}
+
+#contact form .field textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 0;
+  border: none;
+  padding-top: 16px;
+  opacity: 0;
+  font-family: zeitung-mono, sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  transition: all 500ms;
+}
+
+#contact form .field textarea:focus {
+  width: 2048px;
+  padding: 16px;
+  opacity: 1;
+}
+
+footer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  font-family: "Zeitung", sans-serif;
+  font-size: 18px;
+  color: #1C1C1C;
+  padding: 8px;
+}
+
+.hidden {
+  display: none;
+  z-index: -10;
+}
+
+section:target {
+  display: flex;
+  z-index: 10;
+}

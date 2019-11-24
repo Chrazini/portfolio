@@ -1,0 +1,393 @@
+//compileExpanded: ../css/main.css
+
+@import 'variables'
+@import 'typography'
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  overflow: hidden
+
+a
+	text-decoration: none
+  color: $colour-primary
+
+	&:hover, &:focus
+		color: lighten( $colour-primary, 10% )
+
+body
+  display: flex
+  flex-direction: column
+  height: 100vh
+  width: 100vw
+
+
+@media (min-width: 1280px)
+  body
+    display: grid
+    grid-template-columns: 1fr 1280px 1fr
+    grid-template-rows: 1fr 720px 1fr
+
+  @keyframes left-right
+    from
+      transform: translateX(-100vw)
+    to
+      transform: translateX(0)
+
+  @keyframes right-left
+    from
+      transform: translateX(100vw)
+    to
+      transform: translateX(0)
+
+  @keyframes top-bottom
+    from
+      transform: translateY(-100vw)
+    to
+      transform: translateY(0)
+
+  @keyframes bottom-top
+    from
+      transform: translateY(100vw)
+    to
+      transform: translateY(0)
+
+  @keyframes a-menu
+    0%
+      transform: translateY(64px)
+      opacity: 0
+
+    50%
+      opacity: 0
+
+    100%
+      transform: translateY(0px)
+      opacity: 1
+
+  .line
+    height: 100%
+    width: 100%
+
+  #top
+    grid:
+      column-start: 1
+      column-end: 4
+      row-start: 1
+      row-end: 2
+
+    animation:
+      name: left-right
+      duration: 2s
+      timing-function: ease-in-out
+
+    border-bottom: 1px solid $color-dark
+
+  #left
+    grid:
+      column-start: 1
+      column-end: 2
+      row-start: 1
+      row-end: 4
+
+    animation:
+      name: top-bottom
+      duration: 2s
+      timing-function: ease-in-out
+
+    border-right: 1px solid $color-dark
+
+  #right
+    grid:
+      column-start: 3
+      column-end: 4
+      row-start: 1
+      row-end: 4
+
+    animation:
+      name: bottom-top
+      duration: 2s
+      timing-function: ease-in-out
+
+    border-left: 1px solid $color-dark
+
+  #bottom
+    grid:
+      column-start: 1
+      column-end: 4
+      row-start: 3
+      row-end: 4
+
+    animation:
+      name: right-left
+      duration: 2s
+      timing-function: ease-in-out
+
+    border-top: 1px solid $color-dark
+
+nav
+  grid:
+    column-start: 2
+    column-end: 3
+    row-start: 1
+    row-end: 2
+
+  display: flex
+  justify-content: flex-end
+  align-items: flex-end
+
+  a
+    padding: 16px
+    font-family: $font-primary
+    font-size: 24px
+    text-transform: uppercase
+    color: $color-dark
+    opacity: 0
+
+    &:hover
+      font-weight: 700
+
+    @for $i from 1 through 4
+      &:nth-child(#{$i})
+        animation:
+          name: a-menu
+          duration: (250ms * $i)
+          timing-function: ease-in-out
+          fill-mode: forwards
+          delay: 1s
+
+		a:nth-child(4)
+			margin-right: 10px
+
+main
+  grid:
+    column-start: 2
+    column-end: 3
+    row-start: 2
+    row-end: 3
+
+  color: $color-light
+  font-size: 18px
+
+section
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  flex-direction: column
+
+  position: absolute
+  height: 720px
+  width: 1280px
+  padding: 64px
+  background-color: $color-dark
+
+/* ********** HOME SECTION ******************** */
+#home
+  justify-content: center
+
+  img
+    margin-top: -64px
+    height: 256px
+    width: auto
+
+  h1
+    font-size: 6.0rem
+
+  .social
+    display: flex
+    justify-content: center
+    align-items: center
+
+/* ********** PORTFOLIO SECTION ******************** */
+#portfolio
+  h1
+
+  .wrapper
+    display: grid
+    grid-template-columns: 64px 1fr 64px
+    grid-template-rows: 1fr
+
+    height: 100%
+    width: 100%
+
+    .left
+      grid:
+        column-start: 1
+        column-end: 2
+        row-start: 1
+        row-end: 2
+
+      .arrow
+        transform: rotate(-135deg)
+
+    .right
+      grid:
+        column-start: 3
+        column-end: 4
+        row-start: 1
+        row-end: 2
+
+      .arrow
+        transform: rotate(45deg)
+
+    .right, .left
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 512px
+
+    .arrow
+      height: 44px
+      width: 44px
+
+      border: 0px $colour-tertiary solid
+      border-top: 2px $colour-tertiary solid
+      border-right: 2px $colour-tertiary solid
+      background-color: rgba(0,0,0,0)
+      outline: none
+
+      padding: 8px
+      font-size: 30px
+      transition: all 10ms
+
+      &:hover
+        border-top: 6px $colour-tertiary solid
+        border-right: 6px $colour-tertiary solid
+        transition: all 100ms
+
+    .content
+      margin-top: 16px
+      border-radius: 8px
+      background-color: rgba(240,240,240,0.1)
+
+      article
+        display: flex
+        align-items: center
+        flex-direction: column
+
+        padding: 16px
+
+/* ********** ABOUT SECTION ******************** */
+#about
+  .wrapper
+    display: flex
+    justify-content: center
+
+
+/* ********** CONTACT SECTION ******************** */
+#contact
+  form
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+    margin-top: 64px
+
+    .field
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      flex-direction: row
+      height: 64px
+      width: 768px
+      margin-bottom: 16px
+      background-color: whitesmoke
+
+      font-family: $font-primary
+      font-weight: 200
+      font-size: 18px
+
+      &:hover input
+        width: 2048px
+        padding: 16px
+        opacity: 1
+
+      &:hover textarea
+        width: 2048px
+        padding: 16px
+        opacity: 1
+
+      &:last-child
+        height: 128px
+
+      label
+        display: flex
+        justify-content: center
+        align-items: center
+
+        height: inherit
+        width: 100%
+
+        font-size: 18px
+        text-transform: uppercase
+        font-weight: 200
+
+        background-color: $colour-primary
+
+      input
+        display: flex
+        justify-content: center
+        align-items: center
+
+        height: inherit
+        width: 0
+        border: none
+        opacity: 0
+
+        font-family: $font-mono
+        font-size: 14px
+        font-weight: 100
+
+        transition: all 500ms
+
+        &:focus
+          width: 2048px
+          padding: 16px
+          opacity: 1
+
+      textarea
+        display: flex
+        justify-content: center
+        align-items: center
+
+        height: inherit
+        width: 0
+        border: none
+        padding-top: 16px
+        opacity: 0
+
+        font-family: $font-mono
+        font-size: 14px
+        font-weight: 100
+
+        transition: all 500ms
+
+        &:focus
+          width: 2048px
+          padding: 16px
+          opacity: 1
+
+footer
+  grid:
+    column-start: 2
+    column-end: 3
+    row-start: 3
+    row-end: 4
+
+  display: flex
+  justify-content: left
+  align-items: flex-start
+
+  font-family: $font-primary
+  font-size: 18px
+  color: $color-dark
+  padding: 8px
+
+.hidden
+  display: none
+  z-index: -10
+
+section:target
+  display: flex
+  z-index: 10
